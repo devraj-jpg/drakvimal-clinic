@@ -19,7 +19,8 @@
     </a>
 
     <h3>📬 Contact Form</h3>
-    <form name="contact" method="POST" data-netlify="true">
+    <form name="contact" method="POST" data-netlify="true" action="thank-you.html">
+      <input type="hidden" name="form-name" value="contact">
       <input type="text" name="name" placeholder="Your Name" required><br>
       <input type="email" name="email" placeholder="Your Email" required><br>
       <textarea name="message" placeholder="Your Message" required></textarea><br>
@@ -27,7 +28,8 @@
     </form>
 
     <h3>🌟 Patient Feedback</h3>
-    <form name="feedback" method="POST" data-netlify="true">
+    <form name="feedback" method="POST" data-netlify="true" action="thank-you.html">
+      <input type="hidden" name="form-name" value="feedback">
       <input type="text" name="name" placeholder="Your Name" required><br>
       <input type="number" name="rating" placeholder="Rating (1-5)" min="1" max="5" required><br>
       <textarea name="feedback" placeholder="Your Feedback" required></textarea><br>
