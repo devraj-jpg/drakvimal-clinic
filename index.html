@@ -17,23 +17,31 @@
       <button>📅 Book Appointment on WhatsApp</button>
     </a>
 
-    <h3>📬 Contact Form</h3>
-    <form name="contact" method="POST" data-netlify="true" action="thank-you.html">
-      <input type="hidden" name="form-name" value="contact">
-      <input type="text" name="name" placeholder="Your Name" required><br>
-      <input type="email" name="email" placeholder="Your Email" required><br>
-      <textarea name="message" placeholder="Your Message" required></textarea><br>
-      <button type="submit">Send Message</button>
-    </form>
+   <h3>📬 Contact Form</h3>
+<form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="thank-you.html">
+  <input type="hidden" name="form-name" value="contact" />
+  <p style="display:none;">
+    <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+  </p>
+  <input type="text" name="name" placeholder="Your Name" required><br>
+  <input type="email" name="email" placeholder="Your Email" required><br>
+  <textarea name="message" placeholder="Your Message" required></textarea><br>
+  <button type="submit">Send Message</button>
+</form>
+
 
     <h3>🌟 Patient Feedback</h3>
-    <form name="feedback" method="POST" data-netlify="true" action="thank-you.html">
-      <input type="hidden" name="form-name" value="feedback">
-      <input type="text" name="name" placeholder="Your Name" required><br>
-      <input type="number" name="rating" placeholder="Rating (1-5)" min="1" max="5" required><br>
-      <textarea name="feedback" placeholder="Your Feedback" required></textarea><br>
-      <button type="submit">Submit Feedback</button>
-    </form>
+<form name="feedback" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="thank-you.html">
+  <input type="hidden" name="form-name" value="feedback" />
+  <p style="display:none;">
+    <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+  </p>
+  <input type="text" name="name" placeholder="Your Name" required><br>
+  <input type="number" name="rating" placeholder="Rating (1-5)" min="1" max="5" required><br>
+  <textarea name="feedback" placeholder="Your Feedback" required></textarea><br>
+  <button type="submit">Submit Feedback</button>
+</form>
+
 
     <footer>
       <p>© 2025 Ashu Chikitsa Kendra and Diabetic Clinic | Designed for Dr. Arvind Kumar Vimal</p>
