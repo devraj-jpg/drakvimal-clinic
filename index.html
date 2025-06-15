@@ -20,27 +20,45 @@
    <h3>📬 Contact Form</h3>
 <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="thank-you.html">
   <input type="hidden" name="form-name" value="contact" />
-  <p style="display:none;">
-    <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+  <p hidden>
+    <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
   </p>
-  <input type="text" name="name" placeholder="Your Name" required><br>
-  <input type="email" name="email" placeholder="Your Email" required><br>
-  <textarea name="message" placeholder="Your Message" required></textarea><br>
-  <button type="submit">Send Message</button>
+  <p>
+    <input type="text" name="name" placeholder="Your Name" required>
+  </p>
+  <p>
+    <input type="email" name="email" placeholder="Your Email" required>
+  </p>
+  <p>
+    <textarea name="message" placeholder="Your Message" required></textarea>
+  </p>
+  <p>
+    <button type="submit">Send Message</button>
+  </p>
 </form>
+
 
 
     <h3>🌟 Patient Feedback</h3>
 <form name="feedback" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="thank-you.html">
   <input type="hidden" name="form-name" value="feedback" />
-  <p style="display:none;">
-    <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+  <p hidden>
+    <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
   </p>
-  <input type="text" name="name" placeholder="Your Name" required><br>
-  <input type="number" name="rating" placeholder="Rating (1-5)" min="1" max="5" required><br>
-  <textarea name="feedback" placeholder="Your Feedback" required></textarea><br>
-  <button type="submit">Submit Feedback</button>
+  <p>
+    <input type="text" name="name" placeholder="Your Name" required>
+  </p>
+  <p>
+    <input type="number" name="rating" placeholder="Rating (1-5)" min="1" max="5" required>
+  </p>
+  <p>
+    <textarea name="feedback" placeholder="Your Feedback" required></textarea>
+  </p>
+  <p>
+    <button type="submit">Submit Feedback</button>
+  </p>
 </form>
+
 
 
     <footer>
