@@ -1,69 +1,49 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ashu Chikitsa Kendra and Diabetic Clinic</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <title>डॉ. एके विमल क्लिनिक</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
+<div class="container">
     <h1>Ashu Chikitsa Kendra and Diabetic Clinic</h1>
     <h2>Consultant Physician – Dr. Arvind Kumar Vimal</h2>
     <p><strong>Address:</strong> Naga Path, Pali Road, Dehri On Sone</p>
     <p><strong>District:</strong> Rohtas, State - Bihar</p>
     <p><strong>Timing:</strong> 11:00 AM – 2:00 PM</p>
-    <a href="https://wa.me/919919348598?text=Hello%20Doctor,%20I%20want%20to%20book%20an%20appointment." target="_blank">
-      <button>📅 Book Appointment on WhatsApp</button>
-    </a>
 
-   <h3>📬 Contact Form</h3>
-<form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="thank-you.html">
-  <input type="hidden" name="form-name" value="contact" />
-  <p hidden>
-    <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
-  </p>
-  <p>
-    <input type="text" name="name" placeholder="Your Name" required>
-  </p>
-  <p>
-    <input type="email" name="email" placeholder="Your Email" required>
-  </p>
-  <p>
-    <textarea name="message" placeholder="Your Message" required></textarea>
-  </p>
-  <p>
-    <button type="submit">Send Message</button>
-  </p>
-</form>
+    <form id="google-sheet-form">
+        <input type="text" name="Name" placeholder="Name" required><br>
+        <input type="tel" name="Mobile Number" placeholder="Mobile Number" required><br>
+        <input type="email" name="Email" placeholder="Email" required><br>
+        <input type="number" name="Age" placeholder="Age"><br>
+        <input type="text" name="Disease" placeholder="Disease"><br>
+        <textarea name="Feedback" placeholder="Your Feedback"></textarea><br>
+        <button type="submit">Submit</button>
+    </form>
 
+    <div id="response-message" class="hidden">
+        धन्यवाद! आपकी जानकारी सफलतापूर्वक रिकॉर्ड हो गई है।
+    </div>
+</div>
 
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/https://script.google.com/macros/s/AKfycbwjKF9eBdqGy6BpHJjQZtLttPqfEYMa9GcdFOEXt2LcgaAiV1xxxudbknlVO-WbOxN-/exec/exec'; // Replace this
+    const form = document.getElementById('google-sheet-form');
+    const responseMsg = document.getElementById('response-message');
 
-    <h3>🌟 Patient Feedback</h3>
-<form name="feedback" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="thank-you.html">
-  <input type="hidden" name="form-name" value="feedback" />
-  <p hidden>
-    <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
-  </p>
-  <p>
-    <input type="text" name="name" placeholder="Your Name" required>
-  </p>
-  <p>
-    <input type="number" name="rating" placeholder="Rating (1-5)" min="1" max="5" required>
-  </p>
-  <p>
-    <textarea name="feedback" placeholder="Your Feedback" required></textarea>
-  </p>
-  <p>
-    <button type="submit">Submit Feedback</button>
-  </p>
-</form>
-
-
-
-    <footer>
-      <p>© 2025 Ashu Chikitsa Kendra and Diabetic Clinic | Designed for Dr. Arvind Kumar Vimal</p>
-    </footer>
-  </div>
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                form.reset();
+                responseMsg.classList.remove('hidden');
+            })
+            .catch(error => console.error('Error!', error.message));
+    });
+</script>
 </body>
 </html>
